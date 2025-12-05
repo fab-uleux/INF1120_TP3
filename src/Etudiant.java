@@ -2,11 +2,11 @@ public class Etudiant {
     private String matricule;
     private String prenom;
     private String nom;
-    private char cote;
-    private double achat;
-    private double paye;
+    private String cote;
+    private String achat;
+    private String paye;
 
-    public Etudiant(String matricule, String prenom, String nom, char cote, double achat, double paye) {
+    public Etudiant(String matricule, String prenom, String nom, String cote, String achat, String paye) {
         this.matricule = matricule;
         this.prenom = prenom;
         this.nom = nom;
