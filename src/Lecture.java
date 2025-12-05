@@ -25,8 +25,9 @@ public class Lecture {
             lire.readLine();
             while((ligne=lire.readLine())!=null){
                 String[] tab = ligne.split(";");
-                //.parseDouble(tab[]) pour les 2 dernier index, pas sur pour char
-                Etudiant etudiant = new Etudiant(tab[0],tab[1],tab[2],tab[3],tab[4],tab[5]);
+                tab[4] = tab[4].replace(",", ".");
+                tab[5] = tab[5].replace(",", ".");
+                Etudiant etudiant = new Etudiant(tab[0],tab[1],tab[2],tab[3],Double.parseDouble(tab[4]),Double.parseDouble(tab[5]));
                 System.out.println(etudiant);
             }
         } catch (FileNotFoundException e) {

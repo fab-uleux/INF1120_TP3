@@ -3,10 +3,10 @@ public class Etudiant {
     private String prenom;
     private String nom;
     private String cote;
-    private String achat;
-    private String paye;
+    private double achat;
+    private double paye;
 
-    public Etudiant(String matricule, String prenom, String nom, String cote, String achat, String paye) {
+    public Etudiant(String matricule, String prenom, String nom, String cote, double achat, double paye) {
         this.matricule = matricule;
         this.prenom = prenom;
         this.nom = nom;
