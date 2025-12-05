@@ -1,28 +1,34 @@
 import java.io.*;
 public class Lecture {
     public static void main(String[] args) {
+
+        int nbEtudiant = cptLigne();
+        System.out.println(nbEtudiant);
+
+        Etudiant[] etudiantTab = new Etudiant[nbEtudiant];
+        {
+//            int i = 0;
+//            String[] tab = ligne.split(";");
+//            //.parseDouble(tab[]) pour les 2 dernier index, pas sur pour char
+//            Etudiant etudiant = new Etudiant(tab[0],tab[1],tab[2],tab[3],tab[4],tab[5]);
+//            etudiantTab[i] = etudiant;
+//            System.out.println(etudiant);
+        }
+    }
+
+    public static int cptLigne() {
         try {
-            BufferedReader lire = new BufferedReader(
-                    new FileReader("Etudiants.csv"));
-            String ligne;
-            int cpt=0;
-            Etudiant[] etudiantTab = new Etudiant[100];
-            while((ligne=lire.readLine())!=null)
-            {    cpt++;
-                String[] tab = ligne.split(";");
-                Etudiant etudiant = new Etudiant(tab[0],tab[1],tab[2],tab[3],tab[4],tab[5]);
-//                System.out.println("Etudiant numéro "+cpt);
-//                for(int i=0; i< tab.length;i++) {
-//                    System.out.println(tab[i]);
-//                }
-                etudiantTab[cpt] = etudiant;
-                System.out.println(etudiant);
+            BufferedReader lire = new BufferedReader(new FileReader("Etudiants.csv"));
+            int nbLigne = -1;
+            while (lire.readLine() != null) {
+                nbLigne++;
             }
             lire.close();
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
+            return nbLigne;
         } catch (IOException e) {
-            System.out.println(e.toString());
+            System.out.println(e.getMessage());
+            //Besoin de retourner un int en cas d'erreur
+            return -999;
         }
     }
 }
