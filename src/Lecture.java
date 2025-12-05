@@ -21,6 +21,8 @@ public class Lecture {
         try{
             BufferedReader lire = new BufferedReader(new FileReader("Etudiants.csv"));
             String ligne;
+            //lit de la première ligne sans = ligne
+            lire.readLine();
             while((ligne=lire.readLine())!=null){
                 String[] tab = ligne.split(";");
                 //.parseDouble(tab[]) pour les 2 dernier index, pas sur pour char
