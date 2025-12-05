@@ -2,6 +2,7 @@ import java.io.*;
 public class Lecture {
 
 //    public static void lire(String[] args) meh marche pas
+
     public static int cptLigne() {
         try {
             BufferedReader lire = new BufferedReader(new FileReader("Etudiants.csv"));
@@ -18,13 +19,13 @@ public class Lecture {
         }
     }
 
-    public static void lisLigne(Etudiant[] etudiantTab){
+    public static void lireFichierEtudiants(Etudiant[] etudiantTab){
         try{
             BufferedReader lire = new BufferedReader(new FileReader("Etudiants.csv"));
             String ligne;
             String entete;
             int i = -1;
-            //Assigne la première lisLigne a entete
+            //Assigne la première lireFichierEtudiants a entete
             entete = lire.readLine();
             while((ligne=lire.readLine())!=null){
                 i++;
