@@ -4,6 +4,6 @@ public class Main {
         int nbEtudiant = Lecture.cptLigne();
         System.out.println(nbEtudiant);
         Etudiant[] etudiantTab = new Etudiant[nbEtudiant];
-        Lecture.transfereLigne(etudiantTab);
+        Lecture.ligne(etudiantTab);
     }
 }
