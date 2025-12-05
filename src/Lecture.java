@@ -18,25 +18,25 @@ public class Lecture {
         }
     }
 
-    public static void ligne(Etudiant[] etudiantTab){
+    public static void lisLigne(Etudiant[] etudiantTab){
         try{
             BufferedReader lire = new BufferedReader(new FileReader("Etudiants.csv"));
             String ligne;
             String entete;
-            int cpt = 0;
-            //Assigne la première ligne a entete
+            int i = -1;
+            //Assigne la première lisLigne a entete
             entete = lire.readLine();
-            System.out.println("Entête | "+entete);
             while((ligne=lire.readLine())!=null){
-                cpt++;
+                i++;
                 String[] tab = ligne.split(";");
                 //Remplace , avec . pour pas crée d'erreur au double
                 tab[4] = tab[4].replace(",", ".");
                 tab[5] = tab[5].replace(",", ".");
                 //TODO comment convertir un String tab[3] en char
-                //  -l'index 0 de charAt pointe vers le premier index de tab[3] pas d'etudiant au complet. Donc, index 0 de la string contenue a tab[3] est le char que tu cherche!!!
+                //  -l'index 0 de charAt pointe vers le premier index de tab[3] pas d'étudiant au complet.
                 Etudiant etudiant = new Etudiant(tab[0],tab[1],tab[2],tab[3].charAt(0),Double.parseDouble(tab[4]),Double.parseDouble(tab[5]));
-                System.out.println("Étudiant numéro "+cpt+" | "+etudiant);
+                // -1 pour éviter out of bound
+                etudiantTab[i] = etudiant;
             }
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
